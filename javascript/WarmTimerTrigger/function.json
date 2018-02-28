@@ -1,0 +1,11 @@
+{
+    "bindings": [
+        {
+            "name": "warmTimer",
+            "type": "timerTrigger",
+            "direction": "in",
+            "schedule": "0 */4 * * * *"
+        }
+    ],
+    "disabled": false
+}

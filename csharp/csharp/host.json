@@ -1,0 +1,6 @@
+{
+  "http": {
+    "routePrefix": ""
+  },
+  "watchDirectories": [ "Domain" ]
+}

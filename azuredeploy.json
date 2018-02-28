@@ -1,0 +1,283 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.5.0",
+    "parameters": {
+        "functionAppName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the function app that you wish to create, this will also be used as the subdomain of your service endpoint (i.e. myapp.azurewebsites.net)."
+            }
+        },
+        "functionAppLanguage": {
+            "type": "string",
+            "allowedValues": [
+                "Javascript",
+                "C#",
+                "C# Script (.csx)"
+            ],
+            "metadata": {
+                "description": "The language to write your serverless functions in."
+            }
+        }
+    },
+    "variables": {
+        "functionAppNameLower": "[toLower(parameters('functionAppName'))]",
+        "documentDbName": "[concat('database', uniqueString(resourceGroup().id))]",
+        "storageAccountName": "[concat('storage', uniqueString(resourceGroup().id))]",
+        "notificationHubNamespace": "[concat('namespace', uniqueString(resourceGroup().id))]",
+        "notificationHubName": "[concat('hub', uniqueString(resourceGroup().id))]",
+        "keyVaultName": "[concat('keyvault', uniqueString(resourceGroup().id))]",
+        "functionAppUrl": "[concat(variables('functionAppNameLower'),'.azurewebsites.net')]",
+        "identityResourceId": "[concat(resourceId('Microsoft.Web/sites', variables('functionAppNameLower')),'/providers/Microsoft.ManagedIdentity/Identities/default')]",
+        "branch": "master",
+        "repoURL": "https://github.com/colbylwilliams/Azure.Mobile.git"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "kind": "functionapp",
+            "name": "[variables('functionAppNameLower')]",
+            "apiVersion": "2016-09-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "name": "[variables('functionAppNameLower')]",
+                "hostingEnvironment": ""
+            },
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "kind": "functionapp",
+            "name": "[variables('functionAppNameLower')]",
+            "apiVersion": "2016-08-01",
+            "location": "[resourceGroup().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "name": "[variables('functionAppNameLower')]",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('functionAppNameLower'))]",
+                "siteConfig": {
+                    "phpVersion": "off",
+                    "clientAffinityEnabled": false,
+                    "hostingEnvironment": "",
+                    "push": {
+                        "isPushEnabled": true
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('functionAppNameLower'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                "[resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName'))]",
+                "[resourceId('Microsoft.NotificationHubs/namespaces', variables('notificationHubNamespace'))]",
+                "[resourceId('Microsoft.NotificationHubs/namespaces/notificationHubs', variables('notificationHubNamespace'), variables('notificationHubName'))]"
+            ],
+            "resources": [
+                {
+                    "type": "config",
+                    "name": "connectionstrings",
+                    "apiVersion": "2016-08-01",
+                    "properties": {
+                        "MS_NotificationHubConnectionString": {
+                            "value": "[listKeys(resourceId('Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules', variables('notificationHubNamespace'), variables('notificationHubName'), 'DefaultFullSharedAccessSignature'), '2014-09-01').primaryConnectionString]",
+                            "type": "NotificationHub"
+                        },
+                        "MS_AzureStorageAccountConnectionString": {
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
+                            "type": "Custom"
+                        }
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))]"
+                    ]                    
+                },
+                {
+                    "type": "config",
+                    "name": "appsettings",
+                    "apiVersion": "2016-08-01",
+                    "properties": {
+                        "FUNCTION_APP_EDIT_MODE": "[if(equals(parameters('functionAppLanguage'),'C#'), 'readonly', 'readwrite')]",
+                        "FUNCTIONS_EXTENSION_VERSION": "[if(equals(parameters('functionAppLanguage'),'C#'), 'beta', '~1')]",
+                        "WEBSITE_AUTH_HIDE_DEPRECATED_SID": "true",
+                        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
+                        "WEBSITE_CONTENTSHARE": "[variables('functionAppNameLower')]",
+                        "WEBSITE_HTTPLOGGING_RETENTION_DAYS": "2",
+                        "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
+                        "PROJECT": "[if(equals(parameters('functionAppLanguage'),'C#'), 'csharp/csharp', if(equals(parameters('functionAppLanguage'),'Javascript'), 'javascript', 'csharpscript'))]",
+                        "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
+                        "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
+                        "AzureWebJobsDocumentDBConnectionString": "[concat('AccountEndpoint=', reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('documentDbName'))).documentEndpoint, ';AccountKey=', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName')), '2015-04-08').primaryMasterKey)]",
+                        "AzureWebJobsNotificationHubName": "[variables('notificationHubName')]",
+                        "AzureWebJobsNotificationHubsConnectionString": "[listKeys(resourceId('Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules', variables('notificationHubNamespace'), variables('notificationHubName'), 'DefaultFullSharedAccessSignature'), '2014-09-01').primaryConnectionString]",
+                        "AzureWebJobsSecretStorageType": "Blob",
+                        "RemoteDocumentDbKey": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName')), '2015-04-08').primaryMasterKey]",
+                        "RemoteDocumentDbUrl": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('documentDbName'))).documentEndpoint]",
+                        "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', variables('functionAppNameLower')), '2015-05-01').InstrumentationKey]",
+                        "MS_NotificationHubId": "[resourceId('Microsoft.NotificationHubs/namespaces/notificationHubs', variables('notificationHubNamespace'), variables('notificationHubName'))]",
+                        "MS_NotificationHubName": "[variables('notificationHubName')]",
+                        "AzureKeyVaultName": "[variables('keyVaultName')]",
+                        "AzureKeyVaultUrl": "[concat('https://', variables('keyVaultName'), '.vault.azure.net')]"
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))]"
+                    ]                    
+                },
+                {
+                    "type": "sourcecontrols",
+                    "name": "web",
+                    "apiVersion": "2016-08-01",
+                    "comments": "This section configures continuous deployment of the Function App from the GitHub repo.",
+                    "properties": {
+                        "repoUrl": "[variables('repoURL')]",
+                        "branch": "[variables('branch')]",
+                        "isManualIntegration": true
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/serverfarms', variables('functionAppNameLower'))]",
+                        "[resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))]",
+                        "[resourceId('Microsoft.Web/sites/config', variables('functionAppNameLower'), 'appsettings')]",
+                        "[resourceId('Microsoft.Web/sites/config', variables('functionAppNameLower'), 'connectionstrings')]",
+                        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
+                        "[resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName'))]",
+                        "[resourceId('Microsoft.NotificationHubs/namespaces', variables('notificationHubNamespace'))]",
+                        "[resourceId('Microsoft.NotificationHubs/namespaces/notificationHubs', variables('notificationHubNamespace'), variables('notificationHubName'))]",
+                        "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]",
+                        "[resourceId('Microsoft.Insights/components', variables('functionAppNameLower'))]"
+                    ]                    
+                }
+            ]
+        },
+        {
+            "type": "Microsoft.KeyVault/vaults",
+            "name": "[variables('keyVaultName')]",
+            "apiVersion": "2015-06-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "properties": {
+                "sku": {
+                    "family": "A",
+                    "name": "Standard"
+                },
+                "tenantId": "[reference(variables('identityResourceId'), '2015-08-31-PREVIEW').tenantId]",
+                "accessPolicies": [
+                    {
+                        "tenantId": "[reference(variables('identityResourceId'), '2015-08-31-PREVIEW').tenantId]",
+                        "objectId": "[reference(variables('identityResourceId'), '2015-08-31-PREVIEW').principalId]",
+                        "permissions": {
+                            "secrets": [
+                                "Get",
+                                "List",
+                                "Set",
+                                "Delete"
+                            ]
+                        }
+                    }
+                ],
+                "enabledForDeployment": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))]",
+                "[resourceId('Microsoft.Web/serverfarms', variables('functionAppNameLower'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.Insights/components",
+            "kind": "web",
+            "name": "[variables('functionAppNameLower')]",
+            "apiVersion": "2014-04-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "ApplicationId": "[variables('functionAppNameLower')]"
+            },
+            "tags": {
+                "[concat('hidden-link:', resourceId('Microsoft.Web/sites', variables('functionAppNameLower')))]": "Resource"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))]",
+                "[resourceId('Microsoft.Web/serverfarms', variables('functionAppNameLower'))]"
+            ]
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts",
+            "name": "[variables('documentDbName')]",
+            "apiVersion": "2015-04-08",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "defaultExperience": "DocumentDB"
+            },
+            "properties": {
+                "name": "[variables('documentDbName')]",
+                "databaseAccountOfferType": "Standard",
+                "locations": [
+                    {
+                        "locationName": "[resourceGroup().location]",
+                        "failoverPriority": 0
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('storageAccountName')]",
+            "apiVersion": "2017-06-01",
+            "kind": "Storage",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "properties": {
+                "name": "[variables('storageAccountName')]"
+            }
+        },
+        {
+            "type": "Microsoft.NotificationHubs/namespaces",
+            "name": "[variables('notificationHubNamespace')]",
+            "apiVersion": "2014-09-01",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Free"
+            },
+            "properties": {
+                "name": "[variables('notificationHubNamespace')]",
+                "namespaceType": "NotificationHub"
+            },
+            "resources": [
+                {
+                    "type": "Microsoft.NotificationHubs/namespaces/notificationHubs",
+                    "name": "[concat(variables('notificationHubNamespace'), '/', variables('notificationHubName'))]",
+                    "apiVersion": "2014-09-01",
+                    "location": "[resourceGroup().location]",
+                    "properties": {
+                        "name": "[variables('notificationHubName')]"
+                    },
+                    "dependsOn": [
+                        "[resourceId('Microsoft.NotificationHubs/namespaces', variables('notificationHubNamespace'))]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "outputs": {
+        "Configure_iOS": {
+            "type": "string",
+            "value": "[concat('AzureData.configure(forAccountNamed:\"', variables('documentDbName'), '\", withKey: \"', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName')), '2015-04-08').primaryMasterKey, '\", ofType: .master)')]"
+        },
+        "Configure_Android": {
+            "type": "string",
+            "value": "[concat('AzureData.configure(applicationContext, \"', variables('documentDbName'), '\", \"', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName')), '2015-04-08').primaryMasterKey, '\", TokenType.MASTER)')]"
+        },
+        "FunctionsUrl": {
+            "type": "string",
+            "value": "[concat('https://',reference(resourceId('Microsoft.Web/sites', variables('functionAppNameLower'))).hostNames[0])]"
+        },
+        "DocumentDbUrl": {
+            "type": "string",
+            "value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('documentDbName'))).documentEndpoint]"
+        }
+    }
+}
