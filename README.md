@@ -1,7 +1,7 @@
 _Looking for the client SDKs? You can find them in the [Azure.iOS][azure-ios] and [Azure.Android][azure-android] repos._
 
 
-# Azure.Mobile
+# Azure.Mobile [![Build Status](https://travis-ci.org/Azure/Azure.Mobile.svg?branch=master)](https://travis-ci.org/Azure/Azure.Mobile)
 
 **[Azure.Mobile](https://aka.ms/mobile) is a framework for rapidly creating iOS and android apps with modern, highly-scalable backends on Azure.**
 
