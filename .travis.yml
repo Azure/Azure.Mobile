@@ -7,4 +7,4 @@ dotnet: 2.0.0
 
 
 script:
- - dotnet build TRAVIS_SOLUTION
+ - dotnet build csharp/csharp.sln
