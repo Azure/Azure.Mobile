@@ -30,7 +30,7 @@
         "functionAppUrl": "[concat(variables('functionAppNameLower'),'.azurewebsites.net')]",
         "identityResourceId": "[concat(resourceId('Microsoft.Web/sites', variables('functionAppNameLower')),'/providers/Microsoft.ManagedIdentity/Identities/default')]",
         "branch": "master",
-        "repoURL": "https://github.com/colbylwilliams/Azure.Mobile.git"
+        "repoURL": "https://github.com/Azure/Azure.Mobile.git"
     },
     "resources": [
         {
