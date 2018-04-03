@@ -46,7 +46,7 @@ namespace csharp
 
         [Authorize]
         [FunctionName(nameof(GetResourcePermission))]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "api/data/permission")]PermissionRequest permissionRequest, TraceWriter log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "api/data/permission")]PermissionRequest permissionRequest, TraceWriter log)
         {
             try
             {
