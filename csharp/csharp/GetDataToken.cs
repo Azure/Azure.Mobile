@@ -90,7 +90,7 @@ namespace csharp
                 log.Info($" ... getting new permission token for user");
 
                 // simply getting the user permission will refresh the token
-                var userPermission = await DocumentClient.GetOrCreatePermission((databaseId, collectionId), userId, PermissionMode.All, TokenDurationSeconds, log);
+                var userPermission = await DocumentClient.GetOrCreatePermission(databaseId, collectionId, userId, PermissionMode.All, TokenDurationSeconds, log);
 
 
                 if (!string.IsNullOrEmpty(userPermission?.Token))
