@@ -46,29 +46,15 @@ namespace csharp
 
         [Authorize]
         [FunctionName(nameof(GetResourcePermission))]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "api/data/permission")]HttpRequest req, TraceWriter log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "api/data/permission")]PermissionRequest permissionRequest, TraceWriter log)
         {
             try
             {
-                string body = null;
                 SecretBundle secretBundle = null;
-                PermissionRequest permissionRequest = null;
 
                 var userId = Thread.CurrentPrincipal.GetClaimsIdentity()?.UniqueIdentifier() ?? AnonymousId;
 
                 log.Info($" ... userId: {userId}");
-
-
-                body = new StreamReader(req.Body).ReadToEnd();
-
-                log.Info($" ... req.Body: {body ?? "null"}");
-
-                if (string.IsNullOrEmpty(body))
-                {
-                    return new BadRequestObjectResult("Request Body was null or empty");
-                }
-
-                permissionRequest = JsonConvert.DeserializeObject<PermissionRequest>(body);
 
 
                 if (string.IsNullOrEmpty(permissionRequest?.DatabaseId))
