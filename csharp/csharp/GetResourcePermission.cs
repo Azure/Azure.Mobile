@@ -4,12 +4,10 @@
  */
 
 using System;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.Azure.Documents;
@@ -95,9 +93,18 @@ namespace csharp
                 {
                     log.Info($" ... existing secret found with greater than {TokenRefreshSeconds} seconds remaining before expiration");
 
-                    //JsonConvert.DeserializeObject<Permission>(secretBundle.Value);
+                    var permission = JsonConvert.DeserializeObject<Permission>(secretBundle.Value);
 
-                    return new OkObjectResult(secretBundle.Value);
+                    if (permission?.PermissionMode == PermissionMode.All || permission?.PermissionMode == permissionRequest.PermissionMode)
+                    {
+
+                        log.Info($" ... existing permission found with sufficient permissionMode");
+
+                        return new OkObjectResult(secretBundle.Value);
+
+                    }
+
+                    log.Info($" ... existing permission has insufficient permissionMode");
                 }
 
 

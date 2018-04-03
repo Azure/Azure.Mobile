@@ -23,9 +23,9 @@ namespace csharp
         static string GetUserPermissionId(string databaseId, string userId, PermissionMode permissionMode) => $"{databaseId}-{userId}-{permissionMode.ToString().ToUpper()}";
 
         static string GetUserPermissionId(string databaseId, string collectionId, string userId, PermissionMode permissionMode)
-		{
-			return string.IsNullOrEmpty(collectionId) ? GetUserPermissionId(databaseId, userId, permissionMode) : $"{databaseId}-{collectionId}-{userId}-{permissionMode.ToString().ToUpper()}";
-		}
+        {
+            return string.IsNullOrEmpty(collectionId) ? GetUserPermissionId(databaseId, userId, permissionMode) : $"{databaseId}-{collectionId}-{userId}-{permissionMode.ToString().ToUpper()}";
+        }
 
 
         public static async Task<Permission> GetOrCreatePermission(this DocumentClient client, string databaseId, string collectionId, string userId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
@@ -34,35 +34,35 @@ namespace csharp
 
             try
             {
-				Database database = null;
-				DocumentCollection documentCollection = null;
+                Database database = null;
+                DocumentCollection documentCollection = null;
 
-				if (!string.IsNullOrEmpty(collectionId))
-				{
-					await client.EnsureCollection(databaseId, collectionId, log);
+                if (!string.IsNullOrEmpty(collectionId))
+                {
+                    await client.EnsureCollection(databaseId, collectionId, log);
 
-					log?.Info($" ... getting collection ({collectionId}) in database ({databaseId})");
+                    log?.Info($" ... getting collection ({collectionId}) in database ({databaseId})");
 
-					var collectionResponse = await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId));
+                    var collectionResponse = await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(databaseId, collectionId));
 
-					documentCollection = collectionResponse?.Resource ?? throw new Exception($"Could not find Document Collection in Database {databaseId} with CollectionId: {collectionId}");
-				}
-				else if (!string.IsNullOrEmpty(databaseId))
-				{
-					await client.EnsureDatabase(databaseId, log);
+                    documentCollection = collectionResponse?.Resource ?? throw new Exception($"Could not find Document Collection in Database {databaseId} with CollectionId: {collectionId}");
+                }
+                else if (!string.IsNullOrEmpty(databaseId))
+                {
+                    await client.EnsureDatabase(databaseId, log);
 
-					log?.Info($" ... collectionId == null, getting database ({databaseId})");
+                    log?.Info($" ... collectionId == null, getting database ({databaseId})");
 
-					var databaseResponse = await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseId));
+                    var databaseResponse = await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(databaseId));
 
-					database = databaseResponse?.Resource ?? throw new Exception($"Could not find Database {databaseId}");
-				}
-				else
-				{
-					throw new Exception($"databaseId must be provided");
-				}
+                    database = databaseResponse?.Resource ?? throw new Exception($"Could not find Database {databaseId}");
+                }
+                else
+                {
+                    throw new Exception($"databaseId must be provided");
+                }
 
-				var selfLink = documentCollection?.SelfLink ?? database?.SelfLink;
+                var selfLink = documentCollection?.SelfLink ?? database?.SelfLink;
 
                 var userTup = await client.GetOrCreateUser(databaseId, userId, log);
 
@@ -117,9 +117,9 @@ namespace csharp
             }
             catch (Exception ex)
             {
-				var collectionComponenet = string.IsNullOrEmpty(collectionId) ? "" : "Collection: {collectionId} ";
+                var collectionComponenet = string.IsNullOrEmpty(collectionId) ? "" : "Collection: {collectionId} ";
 
-				log?.Error($"Error creating new new {permissionMode.ToString().ToUpper()} Permission [Database: {databaseId} {collectionComponenet} User: {userId}  Permission: {permissionId}", ex);
+                log?.Error($"Error creating new new {permissionMode.ToString().ToUpper()} Permission [Database: {databaseId} {collectionComponenet} User: {userId}  Permission: {permissionId}", ex);
                 throw;
             }
         }
@@ -153,6 +153,7 @@ namespace csharp
                 {
                     case HttpStatusCode.Conflict:
 
+                        // check for an existing permission with a different permissionMode
                         var oldPermissionId = permissionId.Replace(permissionMode.ToString().ToUpper(), permissionMode == PermissionMode.All ? PermissionMode.Read.ToString().ToUpper() : PermissionMode.All.ToString().ToUpper());
 
                         log?.Info($" ... deleting old permission ({oldPermissionId})");
@@ -275,22 +276,22 @@ namespace csharp
         static readonly Dictionary<(string DatabaseId, string CollectionId), Task<ResourceResponse<DocumentCollection>>> _collectionCreationTasks = new Dictionary<(string DatabaseId, string CollectionId), Task<ResourceResponse<DocumentCollection>>>();
 
 
-		static bool IsInitialized(string databaseId) => _databaseStatuses.TryGetValue(databaseId, out ClientStatus status) && status == ClientStatus.Initialized;
+        static bool IsInitialized(string databaseId) => _databaseStatuses.TryGetValue(databaseId, out ClientStatus status) && status == ClientStatus.Initialized;
 
-		static bool IsInitialized((string DatabaseId, string CollectionId) collection) => _collectionStatuses.TryGetValue(collection, out ClientStatus status) && status == ClientStatus.Initialized;
+        static bool IsInitialized((string DatabaseId, string CollectionId) collection) => _collectionStatuses.TryGetValue(collection, out ClientStatus status) && status == ClientStatus.Initialized;
 
 
-		static async Task EnsureDatabase(this DocumentClient client, string databaseId, TraceWriter log)
-		{
-			if (!(IsInitialized(databaseId) || await client.InitializeDatabase(databaseId, log)))
-			{
-				throw new Exception($"Could not find Database {databaseId}");
-			}
-		}
-
-		static async Task EnsureCollection(this DocumentClient client, string databaseId, string collectionId, TraceWriter log)
+        static async Task EnsureDatabase(this DocumentClient client, string databaseId, TraceWriter log)
         {
-			var collection = (DatabaseId: databaseId, CollectionId: collectionId);
+            if (!(IsInitialized(databaseId) || await client.InitializeDatabase(databaseId, log)))
+            {
+                throw new Exception($"Could not find Database {databaseId}");
+            }
+        }
+
+        static async Task EnsureCollection(this DocumentClient client, string databaseId, string collectionId, TraceWriter log)
+        {
+            var collection = (DatabaseId: databaseId, CollectionId: collectionId);
 
             if (!(IsInitialized(collection) || await client.InitializeCollection(collection, log)))
             {
@@ -298,17 +299,17 @@ namespace csharp
             }
         }
 
-		static async Task<bool> InitializeDatabase(this DocumentClient client, string databaseId, TraceWriter log)
-		{
-			if (!IsInitialized(databaseId))
-			{
-				await client.CreateDatabaseIfNotExistsAsync(databaseId, log);
-			}
+        static async Task<bool> InitializeDatabase(this DocumentClient client, string databaseId, TraceWriter log)
+        {
+            if (!IsInitialized(databaseId))
+            {
+                await client.CreateDatabaseIfNotExistsAsync(databaseId, log);
+            }
 
-			return IsInitialized(databaseId);
-		}
+            return IsInitialized(databaseId);
+        }
 
-		static async Task<bool> InitializeCollection(this DocumentClient client, (string DatabaseId, string CollectionId) collection, TraceWriter log)
+        static async Task<bool> InitializeCollection(this DocumentClient client, (string DatabaseId, string CollectionId) collection, TraceWriter log)
         {
             if (!IsInitialized(collection.DatabaseId))
             {
