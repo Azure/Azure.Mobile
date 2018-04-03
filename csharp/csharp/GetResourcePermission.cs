@@ -59,12 +59,9 @@ namespace csharp
                 log.Info($" ... userId: {userId}");
 
 
-                using (var reader = new StreamReader(req.Body))
-                {
-                    body = reader.ReadToEnd();
+                body = new StreamReader(req.Body).ReadToEnd();
 
-                    log.Info($" ... req.Body: {body ?? "null"}");
-                }
+                log.Info($" ... req.Body: {body ?? "null"}");
 
                 if (string.IsNullOrEmpty(body))
                 {
