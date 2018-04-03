@@ -22,6 +22,8 @@ namespace csharp
 
         static string GetUserPermissionId(string databaseId, string userId, PermissionMode permissionMode) => $"{databaseId}-{userId}-{permissionMode.ToString().ToUpper()}";
 
+        static string GetUserPermissionId(string databaseId, string collectionId, string userId, PermissionMode permissionMode) => $"{databaseId}-{collectionId}-{userId}-{permissionMode.ToString().ToUpper()}";
+
 
         public static async Task<Permission> GetOrCreatePermission(this DocumentClient client, (string DatabaseId, string CollectionId) collection, string userId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
         {
@@ -44,7 +46,7 @@ namespace csharp
 
                 Permission permission;
 
-                permissionId = GetUserPermissionId(collection.DatabaseId, user.Id, permissionMode);
+                permissionId = GetUserPermissionId(collection.DatabaseId, collection.CollectionId, user.Id, permissionMode);
 
                 // if the user was newly created, go ahead and create the permission
                 if (userTup.created && !string.IsNullOrEmpty(user?.Id))
