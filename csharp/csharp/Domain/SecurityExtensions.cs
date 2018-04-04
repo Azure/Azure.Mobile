@@ -8,12 +8,16 @@ using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Principal;
+using Microsoft.AspNetCore.Http;
 
 namespace csharp
 {
     public static class SecurityExtensions
     {
         const string zumoAuthHeaderKey = "x-zumo-auth";
+        const string xmsClientPrincipalNameKey = "X-MS-CLIENT-PRINCIPAL-NAME";
+        const string xmsClientPrincipalIdKey = "X-MS-CLIENT-PRINCIPAL-ID";
+        const string xmsClientPrincipalProviderKey = "X-MS-CLIENT-PRINCIPAL-IDP";
         const string JwtRegisteredClaimNamesIss = "iss";
 
         // https://github.com/Azure/azure-mobile-apps-net-server/wiki/Understanding-User-Ids
@@ -65,26 +69,42 @@ namespace csharp
         }
 
 
-        public static void LogClaims(this ClaimsIdentity identity, Microsoft.Azure.WebJobs.Host.TraceWriter log)
+        public static string UniqueUserIdentifier(this HttpRequest request)
         {
-            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+            var stableSid = request.ClientPrincipalId();
+            var provider = request.ClientPrincipalProvider();
 
-            if (identity != null)
+            return $"{provider}|{stableSid}";
+        }
+
+
+        public static string ClientPrincipalName(this HttpRequest request)
+        {
+            if (request.Headers.TryGetValue(xmsClientPrincipalNameKey, out var stringValue))
             {
-                foreach (var claim in identity.Claims)
-                {
-
-                    log.Info($"  Type: {claim.Type}\n  Value: {claim.Value}\n");
-                }
+                return stringValue;
             }
-            else
+            return null;
+        }
+
+
+        public static string ClientPrincipalId(this HttpRequest request)
+        {
+            if (request.Headers.TryGetValue(xmsClientPrincipalIdKey, out var stringValue))
             {
-                log.Info("identity was null");
+                return stringValue;
             }
+            return null;
+        }
 
-            log.Info("\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+
+        public static string ClientPrincipalProvider(this HttpRequest request)
+        {
+            if (request.Headers.TryGetValue(xmsClientPrincipalProviderKey, out var stringValue))
+            {
+                return stringValue;
+            }
+            return null;
         }
 
 

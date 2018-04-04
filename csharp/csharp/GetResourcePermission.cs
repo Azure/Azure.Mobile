@@ -54,23 +54,8 @@ namespace csharp
                 SecretBundle secretBundle = null;
                 PermissionRequest permissionRequest = null;
 
-                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
 
-                foreach (var header in req.Headers)
-                {
-                    log.Info($"  Key: {header.Key}\n  Value: {header.Value}\n");
-                }
-
-                log.Info("\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-
-
-                var userId = Thread.CurrentPrincipal.GetClaimsIdentity()?.UniqueIdentifier() ?? AnonymousId;
-
-
-                Thread.CurrentPrincipal.GetClaimsIdentity()?.LogClaims(log);
-
+                var userId = req.UniqueUserIdentifier() ?? AnonymousId;
 
                 log.Info($" ... userId: {userId}");
 
