@@ -235,7 +235,7 @@ namespace csharp
         }
 
 
-        public static void Print(this DocumentClientException dex, TraceWriter log)
+        static void Print(this DocumentClientException dex, TraceWriter log)
         {
             if ((int)dex.StatusCode == 429)
             {

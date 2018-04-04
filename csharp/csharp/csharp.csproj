@@ -20,4 +20,7 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="GetDataToken.cs" />
+  </ItemGroup>
 </Project>
