@@ -4,10 +4,12 @@
  */
 
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.Azure.Documents;
@@ -45,11 +47,24 @@ namespace csharp
 
         [Authorize]
         [FunctionName(nameof(GetResourcePermission))]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "api/data/permission")]PermissionRequest permissionRequest, TraceWriter log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "api/data/permission")]HttpRequest req, TraceWriter log)
         {
             try
             {
                 SecretBundle secretBundle = null;
+                PermissionRequest permissionRequest = null;
+
+                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+
+                foreach (var header in req.Headers)
+                {
+                    log.Info($"  Key: {header.Key}\n  Value: {header.Value}\n");
+                }
+
+                log.Info("\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+                log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+
 
                 var userId = Thread.CurrentPrincipal.GetClaimsIdentity()?.UniqueIdentifier() ?? AnonymousId;
 
@@ -58,6 +73,19 @@ namespace csharp
 
 
                 log.Info($" ... userId: {userId}");
+
+
+                using (var reader = new StreamReader(req.Body))
+                {
+                    var body = reader.ReadToEnd();
+
+                    if (string.IsNullOrEmpty(body))
+                    {
+                        return new BadRequestObjectResult("Request body was null or empty.");
+                    }
+
+                    permissionRequest = JsonConvert.DeserializeObject<PermissionRequest>(body);
+                }
 
 
                 if (string.IsNullOrEmpty(permissionRequest?.DatabaseId))
