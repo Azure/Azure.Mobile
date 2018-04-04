@@ -21,6 +21,7 @@ using Microsoft.Azure.WebJobs.Host;
 
 using Newtonsoft.Json;
 
+
 namespace csharp
 {
     public static class GetResourcePermission
@@ -29,7 +30,7 @@ namespace csharp
         const string AnonymousId = "anonymous-user";
 
         const int MaxTokenDurationSeconds = 18000; // 5 hours
-        const double TokenRefreshSeconds = 600; // 10 minutes
+        const double TokenRefreshSeconds = 600;   // 10 minutes
 
 
         static DocumentClient _documentClient;
@@ -62,6 +63,8 @@ namespace csharp
                     return new BadRequestObjectResult("Unable to serialize request body into PermissionRequest or PermissionRequest.DatabaseId was null");
                 }
 
+                // if permissionRequest.TokenDurationSeconds is < (2 * TokenRefreshSeconds) set the token duration to (2 * TokenRefreshSeconds)
+                // if permissionRequest.TokenDurationSeconds is > MaxTokenDurationSeconds set the token duration to MaxTokenDurationSeconds
                 var tokenDurationSeconds = permissionRequest.TokenDurationSeconds < (TokenRefreshSeconds * 2) ? (TokenRefreshSeconds * 2)
                                          : permissionRequest.TokenDurationSeconds > MaxTokenDurationSeconds ? MaxTokenDurationSeconds
                                          : permissionRequest.TokenDurationSeconds;
@@ -88,8 +91,9 @@ namespace csharp
 
 
                 // if the token is still valid for longer than TokenRefreshSeconds, return it
-                if (secretBundle != null && secretBundle.Attributes.Expires.HasValue
-                    && secretBundle.Attributes.Expires.Value.Subtract(DateTime.UtcNow).TotalSeconds > TokenRefreshSeconds)
+                if (secretBundle != null &&
+                    secretBundle.Attributes.Expires.HasValue &&
+                    secretBundle.Attributes.Expires.Value.Subtract(DateTime.UtcNow).TotalSeconds > TokenRefreshSeconds)
                 {
                     log.Info($" ... existing secret found with greater than {TokenRefreshSeconds} seconds remaining before expiration");
 
