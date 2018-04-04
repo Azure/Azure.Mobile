@@ -53,6 +53,10 @@ namespace csharp
 
                 var userId = Thread.CurrentPrincipal.GetClaimsIdentity()?.UniqueIdentifier() ?? AnonymousId;
 
+
+                Thread.CurrentPrincipal.GetClaimsIdentity()?.LogClaims(log);
+
+
                 log.Info($" ... userId: {userId}");
 
 

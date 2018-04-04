@@ -65,6 +65,29 @@ namespace csharp
         }
 
 
+        public static void LogClaims(this ClaimsIdentity identity, Microsoft.Azure.WebJobs.Host.TraceWriter log)
+        {
+            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+
+            if (identity != null)
+            {
+                foreach (var claim in identity.Claims)
+                {
+
+                    log.Info($"  Type: {claim.Type}\n  Value: {claim.Value}\n");
+                }
+            }
+            else
+            {
+                log.Info("identity was null");
+            }
+
+            log.Info("\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+            log.Info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+        }
+
+
         public static Uri UriFromIssuerClaim(this ClaimsIdentity identity)
         {
             return new Uri(identity?.FindFirst(JwtRegisteredClaimNamesIss)?.Value);
