@@ -17,8 +17,8 @@ namespace csharp
         [JsonProperty("collectionId")]
         public string CollectionId { get; set; }
 
-        [JsonProperty("documentId")]
-        public string DocumentId { get; set; }
+        [JsonProperty("resourceLink")]
+        public string ResourceLink { get; set; }
 
         [JsonProperty("tokenDuration")]
         public int TokenDurationSeconds { get; set; }

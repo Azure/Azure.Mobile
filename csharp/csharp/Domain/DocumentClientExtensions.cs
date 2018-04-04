@@ -28,7 +28,7 @@ namespace csharp
         }
 
 
-        public static async Task<Permission> GetOrCreatePermission(this DocumentClient client, string databaseId, string collectionId, string userId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
+        public static async Task<Permission> GetOrCreatePermission(this DocumentClient client, string databaseId, string collectionId, string resourceLink, string userId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
         {
             var permissionId = string.Empty;
 
@@ -59,10 +59,10 @@ namespace csharp
                 }
                 else
                 {
-                    throw new Exception($"databaseId must be provided");
+                    throw new Exception($"databaseId and collectionId must be provided");
                 }
 
-                var selfLink = documentCollection?.SelfLink ?? database?.SelfLink;
+                var link = resourceLink ?? documentCollection?.SelfLink; //?? throw new Exception($"Could not get selfLink for Document Collection in Database {databaseId} with CollectionId: {collectionId}");
 
                 var userTup = await client.GetOrCreateUser(databaseId, userId, log);
 
@@ -75,7 +75,7 @@ namespace csharp
                 // if the user was newly created, go ahead and create the permission
                 if (userTup.created && !string.IsNullOrEmpty(user?.Id))
                 {
-                    permission = await client.CreateNewPermission(databaseId, selfLink, user, permissionId, permissionMode, durationInSeconds, log);
+                    permission = await client.CreateNewPermission(databaseId, link, user, permissionId, permissionMode, durationInSeconds, log);
                 }
                 else // else look for an existing permission with the id
                 {
@@ -104,7 +104,7 @@ namespace csharp
 
                                 log?.Info($" ... could not find permission ({permissionId}) at uri: {permissionUri} - creating...");
 
-                                permission = await client.CreateNewPermission(databaseId, selfLink, user, permissionId, permissionMode, durationInSeconds, log);
+                                permission = await client.CreateNewPermission(databaseId, link, user, permissionId, permissionMode, durationInSeconds, log);
 
                                 break;
 
@@ -117,20 +117,25 @@ namespace csharp
             }
             catch (Exception ex)
             {
-                var collectionComponenet = string.IsNullOrEmpty(collectionId) ? "" : "Collection: {collectionId} ";
+                var resourceComponent = string.IsNullOrEmpty(resourceLink) ? "" : $" Resource: {resourceLink} ";
 
-                log?.Error($"Error creating new new {permissionMode.ToString().ToUpper()} Permission [Database: {databaseId} {collectionComponenet} User: {userId}  Permission: {permissionId}", ex);
+                log?.Error($"Error creating new new {permissionMode.ToString().ToUpper()} Permission [Database: {databaseId} Collection: {collectionId}{resourceComponent} User: {userId}  Permission: {permissionId}", ex);
                 throw;
             }
         }
 
 
 
-        static async Task<Permission> CreateNewPermission(this DocumentClient client, string databaseId, string resourceSelfLink, User user, string permissionId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
+        static async Task<Permission> CreateNewPermission(this DocumentClient client, string databaseId, string resourceLink, User user, string permissionId, PermissionMode permissionMode, int durationInSeconds, TraceWriter log)
         {
-            log?.Info($" ... creating new permission ({permissionId}) for ({resourceSelfLink})");
+            log?.Info($" ... creating new permission ({permissionId}) for resource at ({resourceLink})");
 
-            var newPermission = new Permission { Id = permissionId, ResourceLink = resourceSelfLink, PermissionMode = permissionMode };
+            var newPermission = new Permission { Id = permissionId, PermissionMode = permissionMode };
+
+            if (!string.IsNullOrEmpty(resourceLink))
+            {
+                newPermission.ResourceLink = resourceLink;
+            }
 
             try
             {
@@ -160,7 +165,7 @@ namespace csharp
 
                         await client.DeletePermissionAsync(UriFactory.CreatePermissionUri(databaseId, user.Id, oldPermissionId));
 
-                        log?.Info($" ... creating new permission ({permissionId}) for ({resourceSelfLink})");
+                        log?.Info($" ... creating new permission ({permissionId}) for resource at ({resourceLink})");
 
                         var permissionResponse = await client.CreatePermissionAsync(user.SelfLink, newPermission, PermissionRequestOptions(durationInSeconds));
 
@@ -178,7 +183,7 @@ namespace csharp
             }
             catch (Exception ex)
             {
-                log?.Error($"Error creating new Permission with Id: {permissionId}  for: {resourceSelfLink}", ex);
+                log?.Error($"Error creating new Permission with Id: {permissionId}  for resource at: {resourceLink}", ex);
                 throw;
             }
         }
