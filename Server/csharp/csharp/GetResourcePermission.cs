@@ -54,8 +54,9 @@ namespace csharp
                 SecretBundle secretBundle = null;
                 PermissionRequest permissionRequest = null;
 
-
+                //https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-overview#user-claims
                 var userId = req.UniqueUserIdentifier() ?? AnonymousId;
+
 
                 log.Info($" ... userId: {userId}");
 

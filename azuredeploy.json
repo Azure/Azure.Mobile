@@ -107,7 +107,7 @@
                         "WEBSITE_CONTENTSHARE": "[variables('functionAppNameLower')]",
                         "WEBSITE_HTTPLOGGING_RETENTION_DAYS": "2",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
-                        "PROJECT": "[if(equals(parameters('functionAppLanguage'),'C#'), 'csharp/csharp', if(equals(parameters('functionAppLanguage'),'JavaScript'), 'javascript', 'csharpscript'))]",
+                        "PROJECT": "[if(equals(parameters('functionAppLanguage'),'C#'), 'Server/csharp/csharp', if(equals(parameters('functionAppLanguage'),'JavaScript'), 'Server/javascript', 'Server/csharpscript'))]",
                         "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
                         "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2017-06-01').keys[0].value)]",
                         "AzureWebJobsDocumentDBConnectionString": "[concat('AccountEndpoint=', reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('documentDbName'))).documentEndpoint, ';AccountKey=', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('documentDbName')), '2015-04-08').primaryMasterKey)]",

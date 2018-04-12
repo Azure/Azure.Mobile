@@ -1,0 +1,1472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93011B1D207F9BA80011BE1B /* AzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93011B13207F9BA80011BE1B /* AzureMobile.framework */; };
+		93011B24207F9BA80011BE1B /* AzureMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 93011B16207F9BA80011BE1B /* AzureMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93011B3B207F9CB10011BE1B /* AzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93011B32207F9CB10011BE1B /* AzureMobile.framework */; };
+		93011B57207F9CD50011BE1B /* AzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93011B4E207F9CD50011BE1B /* AzureMobile.framework */; };
+		932DBF00207F9DF5000A0017 /* AzureMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 93011B16207F9BA80011BE1B /* AzureMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932DBF01207F9DF8000A0017 /* AzureMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 93011B16207F9BA80011BE1B /* AzureMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		932DBF02207F9DF9000A0017 /* AzureMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 93011B16207F9BA80011BE1B /* AzureMobile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		933854F5207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */; };
+		933854F6207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */; };
+		933854F7207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */; };
+		933854F8207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */; };
+		93385503207FAC9B0009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385502207FAC9B0009C8BC /* AzureCore.framework */; };
+		93385505207FAC9F0009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385504207FAC9F0009C8BC /* AzureData.framework */; };
+		93385507207FACAE0009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385506207FACAE0009C8BC /* AzureCore.framework */; };
+		93385509207FACB10009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385508207FACB10009C8BC /* AzureData.framework */; };
+		9338550B207FACBD0009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550A207FACBD0009C8BC /* AzureCore.framework */; };
+		9338550D207FACC30009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550C207FACC30009C8BC /* AzureData.framework */; };
+		9338550F207FACCC0009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550E207FACCB0009C8BC /* AzureCore.framework */; };
+		93385511207FACCF0009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385510207FACCE0009C8BC /* AzureData.framework */; };
+		93385514207FAD000009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385512207FACF80009C8BC /* Willow.framework */; };
+		93385516207FAD040009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385515207FAD040009C8BC /* KeychainAccess.framework */; };
+		93385518207FAD0A0009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385517207FAD0A0009C8BC /* Willow.framework */; };
+		9338551A207FAD0D0009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385519207FAD0D0009C8BC /* KeychainAccess.framework */; };
+		9338551C207FAD190009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338551B207FAD190009C8BC /* Willow.framework */; };
+		9338551E207FAD1D0009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338551D207FAD1D0009C8BC /* KeychainAccess.framework */; };
+		93385520207FAD2A0009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338551F207FAD2A0009C8BC /* Willow.framework */; };
+		93385522207FAD320009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385521207FAD320009C8BC /* KeychainAccess.framework */; };
+		93385524207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93385523207FBD900009C8BC /* DefaultPermissionProviderTests.swift */; };
+		93385525207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93385523207FBD900009C8BC /* DefaultPermissionProviderTests.swift */; };
+		93385526207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93385523207FBD900009C8BC /* DefaultPermissionProviderTests.swift */; };
+		93385527207FC1710009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385504207FAC9F0009C8BC /* AzureData.framework */; };
+		93385528207FC1800009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385508207FACB10009C8BC /* AzureData.framework */; };
+		93385529207FC18B0009C8BC /* AzureData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550C207FACC30009C8BC /* AzureData.framework */; };
+		9338552A207FC2070009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550A207FACBD0009C8BC /* AzureCore.framework */; };
+		9338552B207FC2130009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385506207FACAE0009C8BC /* AzureCore.framework */; };
+		9338552C207FC21A0009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338551B207FAD190009C8BC /* Willow.framework */; };
+		9338552D207FC21F0009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338551D207FAD1D0009C8BC /* KeychainAccess.framework */; };
+		9338552E207FC2320009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385517207FAD0A0009C8BC /* Willow.framework */; };
+		9338552F207FC2350009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385519207FAD0D0009C8BC /* KeychainAccess.framework */; };
+		93385530207FC2400009C8BC /* AzureCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9338550A207FACBD0009C8BC /* AzureCore.framework */; };
+		93385531207FC2440009C8BC /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385517207FAD0A0009C8BC /* Willow.framework */; };
+		93385532207FC2490009C8BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93385519207FAD0D0009C8BC /* KeychainAccess.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93011B1E207F9BA80011BE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93011B0A207F9BA80011BE1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93011B12207F9BA80011BE1B;
+			remoteInfo = AzureMobile;
+		};
+		93011B3C207F9CB10011BE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93011B0A207F9BA80011BE1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93011B31207F9CB10011BE1B;
+			remoteInfo = "AzureMobile macOS";
+		};
+		93011B58207F9CD50011BE1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93011B0A207F9BA80011BE1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93011B4D207F9CD50011BE1B;
+			remoteInfo = "AzureMobile tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93011B13207F9BA80011BE1B /* AzureMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B16207F9BA80011BE1B /* AzureMobile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AzureMobile.h; sourceTree = "<group>"; };
+		93011B17207F9BA80011BE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93011B1C207F9BA80011BE1B /* AzureMobile iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AzureMobile iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B23207F9BA80011BE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93011B32207F9CB10011BE1B /* AzureMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B3A207F9CB10011BE1B /* AzureMobile macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AzureMobile macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B4E207F9CD50011BE1B /* AzureMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B56207F9CD50011BE1B /* AzureMobile tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AzureMobile tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93011B6A207F9CF50011BE1B /* AzureMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AzureMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPermissionProvider.swift; sourceTree = "<group>"; };
+		93385502207FAC9B0009C8BC /* AzureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCore.framework; path = Carthage/Build/iOS/AzureCore.framework; sourceTree = "<group>"; };
+		93385504207FAC9F0009C8BC /* AzureData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureData.framework; path = Carthage/Build/iOS/AzureData.framework; sourceTree = "<group>"; };
+		93385506207FACAE0009C8BC /* AzureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCore.framework; path = Carthage/Build/Mac/AzureCore.framework; sourceTree = "<group>"; };
+		93385508207FACB10009C8BC /* AzureData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureData.framework; path = Carthage/Build/Mac/AzureData.framework; sourceTree = "<group>"; };
+		9338550A207FACBD0009C8BC /* AzureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCore.framework; path = Carthage/Build/tvOS/AzureCore.framework; sourceTree = "<group>"; };
+		9338550C207FACC30009C8BC /* AzureData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureData.framework; path = Carthage/Build/tvOS/AzureData.framework; sourceTree = "<group>"; };
+		9338550E207FACCB0009C8BC /* AzureCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureCore.framework; path = Carthage/Build/watchOS/AzureCore.framework; sourceTree = "<group>"; };
+		93385510207FACCE0009C8BC /* AzureData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AzureData.framework; path = Carthage/Build/watchOS/AzureData.framework; sourceTree = "<group>"; };
+		93385512207FACF80009C8BC /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/watchOS/Willow.framework; sourceTree = "<group>"; };
+		93385515207FAD040009C8BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/watchOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		93385517207FAD0A0009C8BC /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/tvOS/Willow.framework; sourceTree = "<group>"; };
+		93385519207FAD0D0009C8BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/tvOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		9338551B207FAD190009C8BC /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/Mac/Willow.framework; sourceTree = "<group>"; };
+		9338551D207FAD1D0009C8BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/Mac/KeychainAccess.framework; sourceTree = "<group>"; };
+		9338551F207FAD2A0009C8BC /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Willow.framework; path = Carthage/Build/iOS/Willow.framework; sourceTree = "<group>"; };
+		93385521207FAD320009C8BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		93385523207FBD900009C8BC /* DefaultPermissionProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPermissionProviderTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93011B0F207F9BA80011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93385503207FAC9B0009C8BC /* AzureCore.framework in Frameworks */,
+				93385505207FAC9F0009C8BC /* AzureData.framework in Frameworks */,
+				93385520207FAD2A0009C8BC /* Willow.framework in Frameworks */,
+				93385522207FAD320009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B19207F9BA80011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93011B1D207F9BA80011BE1B /* AzureMobile.framework in Frameworks */,
+				93385530207FC2400009C8BC /* AzureCore.framework in Frameworks */,
+				93385527207FC1710009C8BC /* AzureData.framework in Frameworks */,
+				93385531207FC2440009C8BC /* Willow.framework in Frameworks */,
+				93385532207FC2490009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B2E207F9CB10011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93385507207FACAE0009C8BC /* AzureCore.framework in Frameworks */,
+				93385509207FACB10009C8BC /* AzureData.framework in Frameworks */,
+				9338551C207FAD190009C8BC /* Willow.framework in Frameworks */,
+				9338551E207FAD1D0009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B37207F9CB10011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93011B3B207F9CB10011BE1B /* AzureMobile.framework in Frameworks */,
+				9338552B207FC2130009C8BC /* AzureCore.framework in Frameworks */,
+				93385528207FC1800009C8BC /* AzureData.framework in Frameworks */,
+				9338552C207FC21A0009C8BC /* Willow.framework in Frameworks */,
+				9338552D207FC21F0009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B4A207F9CD50011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9338550B207FACBD0009C8BC /* AzureCore.framework in Frameworks */,
+				9338550D207FACC30009C8BC /* AzureData.framework in Frameworks */,
+				93385518207FAD0A0009C8BC /* Willow.framework in Frameworks */,
+				9338551A207FAD0D0009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B53207F9CD50011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93011B57207F9CD50011BE1B /* AzureMobile.framework in Frameworks */,
+				9338552A207FC2070009C8BC /* AzureCore.framework in Frameworks */,
+				93385529207FC18B0009C8BC /* AzureData.framework in Frameworks */,
+				9338552E207FC2320009C8BC /* Willow.framework in Frameworks */,
+				9338552F207FC2350009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B66207F9CF50011BE1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9338550F207FACCC0009C8BC /* AzureCore.framework in Frameworks */,
+				93385511207FACCF0009C8BC /* AzureData.framework in Frameworks */,
+				93385514207FAD000009C8BC /* Willow.framework in Frameworks */,
+				93385516207FAD040009C8BC /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93011B09207F9BA80011BE1B = {
+			isa = PBXGroup;
+			children = (
+				93011B15207F9BA80011BE1B /* Source */,
+				93011B20207F9BA80011BE1B /* Tests */,
+				93011B14207F9BA80011BE1B /* Products */,
+				93385501207FAC9B0009C8BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		93011B14207F9BA80011BE1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93011B13207F9BA80011BE1B /* AzureMobile.framework */,
+				93011B1C207F9BA80011BE1B /* AzureMobile iOS Tests.xctest */,
+				93011B32207F9CB10011BE1B /* AzureMobile.framework */,
+				93011B3A207F9CB10011BE1B /* AzureMobile macOS Tests.xctest */,
+				93011B4E207F9CD50011BE1B /* AzureMobile.framework */,
+				93011B56207F9CD50011BE1B /* AzureMobile tvOS Tests.xctest */,
+				93011B6A207F9CF50011BE1B /* AzureMobile.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93011B15207F9BA80011BE1B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				933854F3207F9EFB0009C8BC /* Supporting Files */,
+				933854F4207FA8B00009C8BC /* DefaultPermissionProvider.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		93011B20207F9BA80011BE1B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				93011B23207F9BA80011BE1B /* Info.plist */,
+				93385523207FBD900009C8BC /* DefaultPermissionProviderTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		933854F3207F9EFB0009C8BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93011B16207F9BA80011BE1B /* AzureMobile.h */,
+				93011B17207F9BA80011BE1B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93385501207FAC9B0009C8BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93385521207FAD320009C8BC /* KeychainAccess.framework */,
+				9338551F207FAD2A0009C8BC /* Willow.framework */,
+				9338551D207FAD1D0009C8BC /* KeychainAccess.framework */,
+				9338551B207FAD190009C8BC /* Willow.framework */,
+				93385519207FAD0D0009C8BC /* KeychainAccess.framework */,
+				93385517207FAD0A0009C8BC /* Willow.framework */,
+				93385515207FAD040009C8BC /* KeychainAccess.framework */,
+				93385512207FACF80009C8BC /* Willow.framework */,
+				93385510207FACCE0009C8BC /* AzureData.framework */,
+				9338550E207FACCB0009C8BC /* AzureCore.framework */,
+				9338550C207FACC30009C8BC /* AzureData.framework */,
+				9338550A207FACBD0009C8BC /* AzureCore.framework */,
+				93385508207FACB10009C8BC /* AzureData.framework */,
+				93385506207FACAE0009C8BC /* AzureCore.framework */,
+				93385504207FAC9F0009C8BC /* AzureData.framework */,
+				93385502207FAC9B0009C8BC /* AzureCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		93011B10207F9BA80011BE1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93011B24207F9BA80011BE1B /* AzureMobile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B2F207F9CB10011BE1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				932DBF00207F9DF5000A0017 /* AzureMobile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B4B207F9CD50011BE1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				932DBF01207F9DF8000A0017 /* AzureMobile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B67207F9CF50011BE1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				932DBF02207F9DF9000A0017 /* AzureMobile.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		93011B12207F9BA80011BE1B /* AzureMobile iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B27207F9BA80011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile iOS" */;
+			buildPhases = (
+				93011B0E207F9BA80011BE1B /* Sources */,
+				93011B0F207F9BA80011BE1B /* Frameworks */,
+				93011B10207F9BA80011BE1B /* Headers */,
+				93011B11207F9BA80011BE1B /* Resources */,
+				933854F9207FA9150009C8BC /* Carthage Copy Frameworks */,
+				933854FA207FA9220009C8BC /* Carthage Outdated Warning */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AzureMobile iOS";
+			productName = AzureMobile;
+			productReference = 93011B13207F9BA80011BE1B /* AzureMobile.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		93011B1B207F9BA80011BE1B /* AzureMobile iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B2A207F9BA80011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile iOS Tests" */;
+			buildPhases = (
+				93011B18207F9BA80011BE1B /* Sources */,
+				93011B19207F9BA80011BE1B /* Frameworks */,
+				93011B1A207F9BA80011BE1B /* Resources */,
+				93385533207FC4BB0009C8BC /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93011B1F207F9BA80011BE1B /* PBXTargetDependency */,
+			);
+			name = "AzureMobile iOS Tests";
+			productName = AzureMobileTests;
+			productReference = 93011B1C207F9BA80011BE1B /* AzureMobile iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93011B31207F9CB10011BE1B /* AzureMobile macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B43207F9CB10011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile macOS" */;
+			buildPhases = (
+				93011B2D207F9CB10011BE1B /* Sources */,
+				93011B2E207F9CB10011BE1B /* Frameworks */,
+				93011B2F207F9CB10011BE1B /* Headers */,
+				93011B30207F9CB10011BE1B /* Resources */,
+				933854FB207FAA8F0009C8BC /* Carthage Copy Frameworks */,
+				933854FC207FAA910009C8BC /* Carthage Outdated Warning */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AzureMobile macOS";
+			productName = "AzureMobile macOS";
+			productReference = 93011B32207F9CB10011BE1B /* AzureMobile.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		93011B39207F9CB10011BE1B /* AzureMobile macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B46207F9CB10011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile macOS Tests" */;
+			buildPhases = (
+				93011B36207F9CB10011BE1B /* Sources */,
+				93011B37207F9CB10011BE1B /* Frameworks */,
+				93011B38207F9CB10011BE1B /* Resources */,
+				93385534207FC4C10009C8BC /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93011B3D207F9CB10011BE1B /* PBXTargetDependency */,
+			);
+			name = "AzureMobile macOS Tests";
+			productName = "AzureMobile macOSTests";
+			productReference = 93011B3A207F9CB10011BE1B /* AzureMobile macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93011B4D207F9CD50011BE1B /* AzureMobile tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B5F207F9CD50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile tvOS" */;
+			buildPhases = (
+				93011B49207F9CD50011BE1B /* Sources */,
+				93011B4A207F9CD50011BE1B /* Frameworks */,
+				93011B4B207F9CD50011BE1B /* Headers */,
+				93011B4C207F9CD50011BE1B /* Resources */,
+				933854FD207FAA960009C8BC /* Carthage Copy Frameworks */,
+				933854FE207FAA970009C8BC /* Carthage Outdated Warning */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AzureMobile tvOS";
+			productName = "AzureMobile tvOS";
+			productReference = 93011B4E207F9CD50011BE1B /* AzureMobile.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		93011B55207F9CD50011BE1B /* AzureMobile tvOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B62207F9CD50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile tvOS Tests" */;
+			buildPhases = (
+				93011B52207F9CD50011BE1B /* Sources */,
+				93011B53207F9CD50011BE1B /* Frameworks */,
+				93011B54207F9CD50011BE1B /* Resources */,
+				93385535207FC4C70009C8BC /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93011B59207F9CD50011BE1B /* PBXTargetDependency */,
+			);
+			name = "AzureMobile tvOS Tests";
+			productName = "AzureMobile tvOSTests";
+			productReference = 93011B56207F9CD50011BE1B /* AzureMobile tvOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93011B69207F9CF50011BE1B /* AzureMobile watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93011B6F207F9CF50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile watchOS" */;
+			buildPhases = (
+				93011B65207F9CF50011BE1B /* Sources */,
+				93011B66207F9CF50011BE1B /* Frameworks */,
+				93011B67207F9CF50011BE1B /* Headers */,
+				93011B68207F9CF50011BE1B /* Resources */,
+				933854FF207FAA9C0009C8BC /* Carthage Copy Frameworks */,
+				93385500207FAA9D0009C8BC /* Carthage Outdated Warning */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AzureMobile watchOS";
+			productName = "AzureMobile watchOS";
+			productReference = 93011B6A207F9CF50011BE1B /* AzureMobile.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93011B0A207F9BA80011BE1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					93011B12207F9BA80011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					93011B1B207F9BA80011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					93011B31207F9CB10011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					93011B39207F9CB10011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					93011B4D207F9CD50011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+					93011B55207F9CD50011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					93011B69207F9CF50011BE1B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
+					};
+				};
+			};
+			buildConfigurationList = 93011B0D207F9BA80011BE1B /* Build configuration list for PBXProject "AzureMobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 93011B09207F9BA80011BE1B;
+			productRefGroup = 93011B14207F9BA80011BE1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93011B12207F9BA80011BE1B /* AzureMobile iOS */,
+				93011B1B207F9BA80011BE1B /* AzureMobile iOS Tests */,
+				93011B31207F9CB10011BE1B /* AzureMobile macOS */,
+				93011B39207F9CB10011BE1B /* AzureMobile macOS Tests */,
+				93011B4D207F9CD50011BE1B /* AzureMobile tvOS */,
+				93011B55207F9CD50011BE1B /* AzureMobile tvOS Tests */,
+				93011B69207F9CF50011BE1B /* AzureMobile watchOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93011B11207F9BA80011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B1A207F9BA80011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B30207F9CB10011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B38207F9CB10011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B4C207F9CD50011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B54207F9CD50011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B68207F9CF50011BE1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		933854F9207FA9150009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		933854FA207FA9220009C8BC /* Carthage Outdated Warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Outdated Warning";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+		933854FB207FAA8F0009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		933854FC207FAA910009C8BC /* Carthage Outdated Warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Outdated Warning";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+		933854FD207FAA960009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		933854FE207FAA970009C8BC /* Carthage Outdated Warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Outdated Warning";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+		933854FF207FAA9C0009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		93385500207FAA9D0009C8BC /* Carthage Outdated Warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Outdated Warning";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
+		};
+		93385533207FC4BB0009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		93385534207FC4C10009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		93385535207FC4C70009C8BC /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/AzureCore.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/AzureData.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Willow.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/KeychainAccess.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AzureData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Willow.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93011B0E207F9BA80011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933854F5207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B18207F9BA80011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93385524207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B2D207F9CB10011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933854F6207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B36207F9CB10011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93385525207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B49207F9CD50011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933854F7207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B52207F9CD50011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93385526207FBD900009C8BC /* DefaultPermissionProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93011B65207F9CF50011BE1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				933854F8207FA8B00009C8BC /* DefaultPermissionProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93011B1F207F9BA80011BE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93011B12207F9BA80011BE1B /* AzureMobile iOS */;
+			targetProxy = 93011B1E207F9BA80011BE1B /* PBXContainerItemProxy */;
+		};
+		93011B3D207F9CB10011BE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93011B31207F9CB10011BE1B /* AzureMobile macOS */;
+			targetProxy = 93011B3C207F9CB10011BE1B /* PBXContainerItemProxy */;
+		};
+		93011B59207F9CD50011BE1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93011B4D207F9CD50011BE1B /* AzureMobile tvOS */;
+			targetProxy = 93011B58207F9CD50011BE1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		93011B25207F9BA80011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		93011B26207F9BA80011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		93011B28207F9BA80011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93011B29207F9BA80011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93011B2B207F9BA80011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93011B2C207F9BA80011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93011B44207F9CB10011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		93011B45207F9CB10011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		93011B47207F9CB10011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		93011B48207F9CB10011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		93011B60207F9CD50011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		93011B61207F9CD50011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		93011B63207F9CD50011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.3;
+			};
+			name = Debug;
+		};
+		93011B64207F9CD50011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.3;
+			};
+			name = Release;
+		};
+		93011B70207F9CF50011BE1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		93011B71207F9CF50011BE1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azure.mobile;
+				PRODUCT_NAME = AzureMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93011B0D207F9BA80011BE1B /* Build configuration list for PBXProject "AzureMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B25207F9BA80011BE1B /* Debug */,
+				93011B26207F9BA80011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B27207F9BA80011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B28207F9BA80011BE1B /* Debug */,
+				93011B29207F9BA80011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B2A207F9BA80011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B2B207F9BA80011BE1B /* Debug */,
+				93011B2C207F9BA80011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B43207F9CB10011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B44207F9CB10011BE1B /* Debug */,
+				93011B45207F9CB10011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B46207F9CB10011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B47207F9CB10011BE1B /* Debug */,
+				93011B48207F9CB10011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B5F207F9CD50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B60207F9CD50011BE1B /* Debug */,
+				93011B61207F9CD50011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B62207F9CD50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile tvOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B63207F9CD50011BE1B /* Debug */,
+				93011B64207F9CD50011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93011B6F207F9CF50011BE1B /* Build configuration list for PBXNativeTarget "AzureMobile watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93011B70207F9CF50011BE1B /* Debug */,
+				93011B71207F9CF50011BE1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93011B0A207F9BA80011BE1B /* Project object */;
+}
