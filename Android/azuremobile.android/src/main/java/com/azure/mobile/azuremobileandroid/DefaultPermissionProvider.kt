@@ -10,6 +10,7 @@ import com.azure.data.service.Response
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
+import java.net.URL
 
 /**
  * Copyright (c) Microsoft Corporation. All rights reserved.
@@ -18,7 +19,10 @@ import java.io.IOException
 
 data class PermissionRequest(val databaseId: String, val collectionId: String, val documentId: String?, val tokenDuration: Int, val permissionMode: PermissionMode)
 
-class DefaultPermissionProvider(private val baseUrlBuilder: HttpUrl.Builder, override var configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, private val client: OkHttpClient = OkHttpClient.Builder().build()) : PermissionProvider {
+class DefaultPermissionProvider(private val baseUrl: HttpUrl, override var configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, private val client: OkHttpClient = OkHttpClient.Builder().build()) : PermissionProvider {
+
+    constructor(baseUrl: URL, configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, client: OkHttpClient = OkHttpClient.Builder().build())
+            : this(HttpUrl.get(baseUrl)!!, configuration, client)
 
     override fun getPermissionForCollection(collectionId: String, databaseId: String, permissionMode: PermissionMode, completion: (Response<Permission>) -> Unit) {
 
@@ -26,10 +30,12 @@ class DefaultPermissionProvider(private val baseUrlBuilder: HttpUrl.Builder, ove
 
             val permissionRequest = PermissionRequest(databaseId, collectionId, null, configuration!!.defaultTokenDuration.toInt(), permissionMode)
 
-            val url = baseUrlBuilder.addPathSegment("api/data/permission")
+            val url = baseUrl
+                    .newBuilder()
+                    .addPathSegment("api/data/permission")
                     .build()
 
-            val gson = Gson()
+            val gson = Gson() //TODO Do we need to use a shared Gson config here to properly deserialize Permissions?
 
             val request = Request.Builder()
                     .url(url)
