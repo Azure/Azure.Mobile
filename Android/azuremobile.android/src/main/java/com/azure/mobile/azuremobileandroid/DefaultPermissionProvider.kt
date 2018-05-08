@@ -7,7 +7,7 @@ import com.azure.data.service.PermissionProvider
 import com.azure.data.service.PermissionProviderConfiguration
 import com.azure.data.service.PermissionProviderError
 import com.azure.data.service.Response
-import com.google.gson.Gson
+import com.azure.data.util.json.gson
 import okhttp3.*
 import java.io.IOException
 import java.net.URL
@@ -19,7 +19,7 @@ import java.net.URL
 
 data class PermissionRequest(val databaseId: String, val collectionId: String, val documentId: String?, val tokenDuration: Int, val permissionMode: PermissionMode)
 
-class DefaultPermissionProvider(private val baseUrl: HttpUrl, override var configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, private val client: OkHttpClient = OkHttpClient.Builder().build()) : PermissionProvider {
+class DefaultPermissionProvider(private val baseUrl: HttpUrl, override var configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, private val client: OkHttpClient = OkHttpClient()) : PermissionProvider {
 
     constructor(baseUrl: URL, configuration: PermissionProviderConfiguration? = PermissionProviderConfiguration.default, client: OkHttpClient = OkHttpClient.Builder().build())
             : this(HttpUrl.get(baseUrl)!!, configuration, client)
@@ -34,8 +34,6 @@ class DefaultPermissionProvider(private val baseUrl: HttpUrl, override var confi
                     .newBuilder()
                     .addPathSegment("api/data/permission")
                     .build()
-
-            val gson = Gson() //TODO Do we need to use a shared Gson config here to properly deserialize Permissions?
 
             val request = Request.Builder()
                     .url(url)
@@ -61,17 +59,17 @@ class DefaultPermissionProvider(private val baseUrl: HttpUrl, override var confi
                                 val json = body.string()
                                 val permission = gson.fromJson(json, Permission::class.java)
 
-                                completion(Response(permission))
+                                return completion(Response(permission))
 
                             } catch (ex: Exception) {
 
-                                completion(Response(DataError(ex), request, response))
+                                return completion(Response(DataError(ex), request, response))
                             }
                         }
                     })
 
         } catch (ex: Exception) {
-            completion(Response(DataError(PermissionProviderError.GetPermissionFailed)))
+            return completion(Response(DataError(PermissionProviderError.GetPermissionFailed)))
         }
     }
 
