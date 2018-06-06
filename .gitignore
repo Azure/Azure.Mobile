@@ -348,6 +348,9 @@ playground.xcworkspace
 
 iOS/AzureMobile/Carthage/Checkouts
 iOS/AzureMobile/Carthage/Build
+iOS/AzureMobile iOS Example/Carthage/Checkouts
+iOS/AzureMobile iOS Example/Carthage/Build
+
 
 
 # fastlane
@@ -382,3 +385,4 @@ AzureData Sample/scripts/test-all.sh
 Azure.framework.zip
 
 iOS/AzureMobile/AzureMobile.framework.zip
+AzureMobile.framework.zip
