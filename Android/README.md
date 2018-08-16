@@ -1,0 +1,1 @@
+This project has been moved to https://github.com/Azure/Azure.Android/tree/master/azuremobile
