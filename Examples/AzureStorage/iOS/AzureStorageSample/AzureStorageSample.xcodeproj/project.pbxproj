@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA120E392201790A002F5287 /* UploadEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA120E382201790A002F5287 /* UploadEngine.swift */; };
+		AA120E3B22017A53002F5287 /* AzureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA120E3A22017A53002F5287 /* AzureEngine.swift */; };
+		AA3FE7D42202D43D004639D4 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE7D32202D43D004639D4 /* CircularProgressView.swift */; };
+		AA89B0682202A4DC00CA303C /* UploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA89B0672202A4DC00CA303C /* UploadOperation.swift */; };
+		AAC3B15B21F9CB79003D729F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B15A21F9CB79003D729F /* AppDelegate.swift */; };
+		AAC3B16021F9CB79003D729F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC3B15E21F9CB79003D729F /* Main.storyboard */; };
+		AAC3B16221F9CB7B003D729F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC3B16121F9CB7B003D729F /* Assets.xcassets */; };
+		AAC3B16521F9CB7B003D729F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC3B16321F9CB7B003D729F /* LaunchScreen.storyboard */; };
+		AAC3B16E21F9CBAF003D729F /* CameraCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B16C21F9CBAF003D729F /* CameraCaptureService.swift */; };
+		AAC3B16F21F9CBAF003D729F /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B16D21F9CBAF003D729F /* CameraPreviewView.swift */; };
+		AAC3B17121F9CBF3003D729F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B17021F9CBF3003D729F /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA120E382201790A002F5287 /* UploadEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadEngine.swift; sourceTree = "<group>"; };
+		AA120E3A22017A53002F5287 /* AzureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureEngine.swift; sourceTree = "<group>"; };
+		AA3FE7D32202D43D004639D4 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		AA89B0672202A4DC00CA303C /* UploadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadOperation.swift; sourceTree = "<group>"; };
+		AAC3B15721F9CB79003D729F /* AzureStorageSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AzureStorageSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC3B15A21F9CB79003D729F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAC3B15F21F9CB79003D729F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAC3B16121F9CB7B003D729F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAC3B16421F9CB7B003D729F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AAC3B16621F9CB7B003D729F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC3B16C21F9CBAF003D729F /* CameraCaptureService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureService.swift; sourceTree = "<group>"; };
+		AAC3B16D21F9CBAF003D729F /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		AAC3B17021F9CBF3003D729F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAC3B17221F9CC78003D729F /* AzureStorageSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AzureStorageSample-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAC3B15421F9CB79003D729F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA3FE7D522031499004639D4 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				AA120E382201790A002F5287 /* UploadEngine.swift */,
+				AA120E3A22017A53002F5287 /* AzureEngine.swift */,
+				AA89B0672202A4DC00CA303C /* UploadOperation.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
+		AA3FE7D6220314B1004639D4 /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B16C21F9CBAF003D729F /* CameraCaptureService.swift */,
+				AAC3B16D21F9CBAF003D729F /* CameraPreviewView.swift */,
+			);
+			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		AA3FE7D7220314C2004639D4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B17021F9CBF3003D729F /* ViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		AA3FE7D8220314DC004639D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE7D32202D43D004639D4 /* CircularProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AAC3B14E21F9CB79003D729F = {
+			isa = PBXGroup;
+			children = (
+				AAC3B17221F9CC78003D729F /* AzureStorageSample-Bridging-Header.h */,
+				AAC3B15921F9CB79003D729F /* AzureStorageSample */,
+				AAC3B15821F9CB79003D729F /* Products */,
+				D9768FE296DBD86FAB408AD0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AAC3B15821F9CB79003D729F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B15721F9CB79003D729F /* AzureStorageSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAC3B15921F9CB79003D729F /* AzureStorageSample */ = {
+			isa = PBXGroup;
+			children = (
+				AAD5236A220D659100F4791F /* App Delegate */,
+				AA3FE7D8220314DC004639D4 /* Views */,
+				AA3FE7D7220314C2004639D4 /* View Controller */,
+				AA3FE7D6220314B1004639D4 /* Camera Feed */,
+				AA3FE7D522031499004639D4 /* Upload */,
+				AAC3B15E21F9CB79003D729F /* Main.storyboard */,
+				AAC3B16121F9CB7B003D729F /* Assets.xcassets */,
+				AAC3B16321F9CB7B003D729F /* LaunchScreen.storyboard */,
+				AAC3B16621F9CB7B003D729F /* Info.plist */,
+			);
+			path = AzureStorageSample;
+			sourceTree = "<group>";
+		};
+		AAD5236A220D659100F4791F /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B15A21F9CB79003D729F /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		D9768FE296DBD86FAB408AD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAC3B15621F9CB79003D729F /* AzureStorageSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAC3B16921F9CB7B003D729F /* Build configuration list for PBXNativeTarget "AzureStorageSample" */;
+			buildPhases = (
+				AAC3B15321F9CB79003D729F /* Sources */,
+				AAC3B15421F9CB79003D729F /* Frameworks */,
+				AAC3B15521F9CB79003D729F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AzureStorageSample;
+			productName = AzureStorageSample;
+			productReference = AAC3B15721F9CB79003D729F /* AzureStorageSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAC3B14F21F9CB79003D729F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Y Media Labs";
+				TargetAttributes = {
+					AAC3B15621F9CB79003D729F = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = AAC3B15221F9CB79003D729F /* Build configuration list for PBXProject "AzureStorageSample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAC3B14E21F9CB79003D729F;
+			productRefGroup = AAC3B15821F9CB79003D729F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAC3B15621F9CB79003D729F /* AzureStorageSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAC3B15521F9CB79003D729F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC3B16521F9CB7B003D729F /* LaunchScreen.storyboard in Resources */,
+				AAC3B16221F9CB7B003D729F /* Assets.xcassets in Resources */,
+				AAC3B16021F9CB79003D729F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAC3B15321F9CB79003D729F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC3B16F21F9CBAF003D729F /* CameraPreviewView.swift in Sources */,
+				AA89B0682202A4DC00CA303C /* UploadOperation.swift in Sources */,
+				AA3FE7D42202D43D004639D4 /* CircularProgressView.swift in Sources */,
+				AAC3B16E21F9CBAF003D729F /* CameraCaptureService.swift in Sources */,
+				AAC3B17121F9CBF3003D729F /* ViewController.swift in Sources */,
+				AA120E3B22017A53002F5287 /* AzureEngine.swift in Sources */,
+				AA120E392201790A002F5287 /* UploadEngine.swift in Sources */,
+				AAC3B15B21F9CB79003D729F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AAC3B15E21F9CB79003D729F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC3B15F21F9CB79003D729F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAC3B16321F9CB7B003D729F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC3B16421F9CB7B003D729F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAC3B16721F9CB7B003D729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAC3B16821F9CB7B003D729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAC3B16A21F9CB7B003D729F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D784CAQKMX;
+				INFOPLIST_FILE = AzureStorageSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prianka.AzureStorageSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AzureStorageSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAC3B16B21F9CB7B003D729F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D784CAQKMX;
+				INFOPLIST_FILE = AzureStorageSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prianka.AzureStorageSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AzureStorageSample-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAC3B15221F9CB79003D729F /* Build configuration list for PBXProject "AzureStorageSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC3B16721F9CB7B003D729F /* Debug */,
+				AAC3B16821F9CB7B003D729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAC3B16921F9CB7B003D729F /* Build configuration list for PBXNativeTarget "AzureStorageSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC3B16A21F9CB7B003D729F /* Debug */,
+				AAC3B16B21F9CB7B003D729F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAC3B14F21F9CB79003D729F /* Project object */;
+}
